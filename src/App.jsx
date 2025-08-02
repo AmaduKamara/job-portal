@@ -1,9 +1,8 @@
-import React from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import DevEmp from "./components/DevEmp";
-import BrowseJobs from "./components/BrowseJobs";
 import ViewAllJobs from "./components/ViewAllJobs";
+import JobListings from "./components/JobListings";
 
 const App = () => {
   return (
@@ -20,7 +19,7 @@ const App = () => {
       <DevEmp />
 
       {/* <!-- Browse Jobs --> */}
-      <BrowseJobs />
+      <JobListings />
 
       <ViewAllJobs />
     </main>
