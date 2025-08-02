@@ -1,6 +1,6 @@
 import React from "react";
 
-const SingleJob = ({ job }) => {
+const Job = ({ job }) => {
   return (
     <div className='bg-white rounded-xl shadow-md relative'>
       <div className='p-4'>
@@ -21,7 +21,7 @@ const SingleJob = ({ job }) => {
             {job.location}
           </div>
           <a
-            href='job.html'
+            href={`/job/${job.id}`}
             className='h-[36px] bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-lg text-center text-sm'
           >
             Read More
@@ -32,4 +32,4 @@ const SingleJob = ({ job }) => {
   );
 };
 
-export default SingleJob;
+export default Job;
