@@ -1,7 +1,7 @@
 function App() {
   return (
     <main>
-      <h1>React Job Portal</h1>
+      <h1 className="text-red-500">React Job Portal</h1>
     </main>
   );
 }
