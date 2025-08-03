@@ -20,7 +20,6 @@ const App = () => {
 
       {/* <!-- Browse Jobs --> */}
       <JobListings />
-
       <ViewAllJobs />
     </main>
   );

@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Job = ({ job }) => {
+  const [showFullDesc, setShowFullDesc] = useState(false);
+
+  let description = job.description;
+
+  if (!showFullDesc) {
+    description = description.substring(0, 90) + "...";
+  }
+
   return (
     <div className='bg-white rounded-xl shadow-md relative'>
       <div className='p-4'>
@@ -9,7 +17,14 @@ const Job = ({ job }) => {
           <h3 className='text-xl font-bold'>{job.title}</h3>
         </div>
 
-        <div className='mb-5'>{job.description}</div>
+        <div className='mb-5'>{description}</div>
+
+        <button
+          className='text-teal-500 mb-5 hover:text-teal-600 cursor-pointer'
+          onClick={() => setShowFullDesc(!showFullDesc)}
+        >
+          {showFullDesc ? "Show less" : "Show more"}
+        </button>
 
         <h3 className='text-teal-500 mb-2'>{job.salary}</h3>
 
