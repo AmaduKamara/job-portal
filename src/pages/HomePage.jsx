@@ -1,5 +1,8 @@
 import React from "react";
 import Hero from "../components/Hero";
+import DevEmp from "../components/DevEmp";
+import JobListings from "../components/JobListings";
+import ViewAllJobs from "../components/ViewAllJobs";
 
 const HomePage = () => {
   return (
@@ -8,6 +11,9 @@ const HomePage = () => {
         title='Become a React Dev'
         subtitle='Find the React job that fits your skills and needs'
       />
+      <DevEmp />
+      <JobListings />
+      <ViewAllJobs />
     </>
   );
 };
