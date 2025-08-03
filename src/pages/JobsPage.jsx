@@ -9,7 +9,7 @@ const JobsPage = () => {
           <div class='relative'>
             <input
               type='text'
-              class='w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500'
+              class='w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-teal-500'
               placeholder='Filter jobs...'
             />
           </div>
