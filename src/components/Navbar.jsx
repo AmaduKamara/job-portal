@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className='bg-teal-700 border-b border-teal-500 sticky top-0'>
+    <nav className='bg-teal-700 border-b border-teal-500 sticky top-0 shadow-xl'>
       <div className='container mx-auto px-2 sm:px-6 lg:px-8'>
         <div className='flex h-20 items-center justify-between'>
           <div className='flex flex-1 items-center justify-center md:items-stretch md:justify-start'>
