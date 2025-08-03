@@ -21,7 +21,7 @@ const Job = ({ job }) => {
 
         <button
           className='text-teal-500 mb-5 hover:text-teal-600 cursor-pointer'
-          onClick={() => setShowFullDesc(!showFullDesc)}
+          onClick={() => setShowFullDesc((prev) => !prev)}
         >
           {showFullDesc ? "Show less" : "Show more"}
         </button>
