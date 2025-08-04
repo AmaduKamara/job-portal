@@ -7,7 +7,7 @@ const Navbar = () => {
       : "text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2";
 
   return (
-    <nav className='bg-teal-700 border-b border-teal-500 sticky top-0 shadow-xl'>
+    <nav className='bg-teal-700 border-b border-teal-500 sticky top-0 shadow-xl z-50'>
       <div className='container mx-auto px-2 sm:px-6 lg:px-8'>
         <div className='flex h-20 items-center justify-between'>
           <div className='flex flex-1 items-center justify-center md:items-stretch md:justify-start'>

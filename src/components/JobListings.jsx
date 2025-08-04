@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Job from "./Job";
+import LoadingSpinner from "./LoadingSpinner";
 // import jobs from "../jobs.json";
 
 const JobListings = ({ isHome = false }) => {
@@ -11,10 +12,10 @@ const JobListings = ({ isHome = false }) => {
   useEffect(() => {
     const getJobs = async () => {
       try {
-        // 1.Fetch with await fetch()
-        const res = await fetch("http://localhost:8000/jobs/");
+        // 1.Fetch jobs with await fetch()
+        const res = await fetch("http://localhost:8000/jobs");
 
-        //  2. Create data variable and assign the res.json to it
+        //  2. Create data variable and assign the returned res.json data to it
         const data = await res.json();
 
         // 3. Update the state with the retured json data in the data variable on the setJobs state updating function
@@ -22,7 +23,7 @@ const JobListings = ({ isHome = false }) => {
       } catch (error) {
         console.log("Error fetching jobs: ", error.message);
       } finally {
-        // 4. Whethere it fetched data or returned error, we set the loading to false in the finally block of the try catch
+        // 4. Whethere it fetched data or returned error, we set the loading to false in the finally block of the try catch. If not using try/catch, setLoading(false) should be called after the data is fetched successfully 👍🏽
         setLoading(false);
       }
     };
@@ -36,12 +37,16 @@ const JobListings = ({ isHome = false }) => {
         <h2 className='text-3xl font-bold text-teal-500 mb-6 text-center'>
           {isHome ? "Recent Jobs" : "Browse Jobs"}
         </h2>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
-          {/* <!-- Job Listing 1 --> */}
-          {jobs.map((job) => (
-            <Job key={job.id} job={job} />
-          ))}
-        </div>
+
+        {loading ? (
+          <LoadingSpinner />
+        ) : (
+          <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+            {jobs.map((job) => (
+              <Job key={job.id} job={job} />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
