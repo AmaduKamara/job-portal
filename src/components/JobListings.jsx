@@ -9,11 +9,15 @@ const JobListings = ({ isHome = false }) => {
 
   // const jobListings = isHome ? jobs.slice(0, 3) : jobs;
 
+  const apiUrl = isHome
+    ? "http://localhost:8000/jobs?_limit=3"
+    : "http://localhost:8000/jobs";
+
   useEffect(() => {
     const getJobs = async () => {
       try {
         // 1.Fetch jobs with await fetch()
-        const res = await fetch("http://localhost:8000/jobs");
+        const res = await fetch(apiUrl);
 
         //  2. Create data variable and assign the returned res.json data to it
         const data = await res.json();
