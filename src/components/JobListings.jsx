@@ -1,7 +1,8 @@
-import jobs from "../jobs.json";
 import Job from "./Job";
+import jobs from "../jobs.json";
 
 const JobListings = ({ isHome = false }) => {
+
   const jobListings = isHome ? jobs.slice(0, 3) : jobs;
 
   return (
