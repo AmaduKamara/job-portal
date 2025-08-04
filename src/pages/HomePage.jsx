@@ -12,7 +12,8 @@ const HomePage = () => {
         subtitle='Find the React job that fits your skills and needs'
       />
       <DevEmp />
-      <JobListings />
+      <JobListings isHome />
+      {/* <JobListings isHome={true} /> */}
       <ViewAllJobs />
     </>
   );
