@@ -1,9 +1,34 @@
+import { useEffect, useState } from "react";
 import Job from "./Job";
-import jobs from "../jobs.json";
+// import jobs from "../jobs.json";
 
 const JobListings = ({ isHome = false }) => {
+  const [jobs, setJobs] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const jobListings = isHome ? jobs.slice(0, 3) : jobs;
+  // const jobListings = isHome ? jobs.slice(0, 3) : jobs;
+
+  useEffect(() => {
+    const getJobs = async () => {
+      try {
+        // 1.Fetch with await fetch()
+        const res = await fetch("http://localhost:8000/jobs/");
+
+        //  2. Create data variable and assign the res.json to it
+        const data = await res.json();
+
+        // 3. Update the state with the retured json data in the data variable on the setJobs state updating function
+        setJobs(data);
+      } catch (error) {
+        console.log("Error fetching jobs: ", error.message);
+      } finally {
+        // 4. Whethere it fetched data or returned error, we set the loading to false in the finally block of the try catch
+        setLoading(false);
+      }
+    };
+
+    getJobs();
+  }, []);
 
   return (
     <section className='bg-blue-50 px-4 py-10'>
@@ -13,7 +38,7 @@ const JobListings = ({ isHome = false }) => {
         </h2>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
           {/* <!-- Job Listing 1 --> */}
-          {jobListings.map((job) => (
+          {jobs.map((job) => (
             <Job key={job.id} job={job} />
           ))}
         </div>
