@@ -79,7 +79,9 @@ const AddJob = () => {
             </div>
 
             <div className='mb-4'>
-              <label className='block text-gray-700 font-bold mb-2'>Location</label>
+              <label className='block text-gray-700 font-bold mb-2'>
+                Location
+              </label>
               <input
                 type='text'
                 id='location'
@@ -93,7 +95,10 @@ const AddJob = () => {
             <h3 className='text-2xl mb-5'>Company Info</h3>
 
             <div className='mb-4'>
-              <label for='company' className='block text-gray-700 font-bold mb-2'>
+              <label
+                for='company'
+                className='block text-gray-700 font-bold mb-2'
+              >
                 Company Name
               </label>
               <input
@@ -155,7 +160,7 @@ const AddJob = () => {
 
             <div>
               <button
-                className='bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline'
+                className='bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-lg w-full focus:outline-none focus:shadow-outline cursor-pointer'
                 type='submit'
               >
                 Add Job
