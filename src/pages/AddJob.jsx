@@ -4,7 +4,7 @@ const AddJob = () => {
   return (
     <section className='bg-indigo-50'>
       <div className='container m-auto max-w-2xl py-24'>
-        <div className='bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0'>
+        <div className='bg-white shadow-lg px-6 py-8 mb-4 rounded-md m-4 md:m-0'>
           <form>
             <h2 className='text-3xl text-center font-semibold mb-6'>Add Job</h2>
 
@@ -15,7 +15,7 @@ const AddJob = () => {
               <select
                 id='type'
                 name='type'
-                className='border rounded w-full py-2 px-3'
+                className='border rounded w-full py-2 px-3 border-gray-400'
                 required
               >
                 <option value='Full-Time'>Full-Time</option>
@@ -33,7 +33,7 @@ const AddJob = () => {
                 type='text'
                 id='title'
                 name='title'
-                className='border rounded w-full py-2 px-3 mb-2'
+                className='border rounded w-full py-2 px-3 mb-2 border-gray-400'
                 placeholder='eg. Beautiful Apartment In Miami'
                 required
               />
@@ -48,7 +48,7 @@ const AddJob = () => {
               <textarea
                 id='description'
                 name='description'
-                className='border rounded w-full py-2 px-3'
+                className='border rounded w-full py-2 px-3 border-gray-400'
                 rows='4'
                 placeholder='Add any job duties, expectations, requirements, etc'
               ></textarea>
@@ -61,7 +61,7 @@ const AddJob = () => {
               <select
                 id='salary'
                 name='salary'
-                className='border rounded w-full py-2 px-3'
+                className='border rounded w-full py-2 px-3 border-gray-400'
                 required
               >
                 <option value='Under $50K'>Under $50K</option>
@@ -86,7 +86,7 @@ const AddJob = () => {
                 type='text'
                 id='location'
                 name='location'
-                className='border rounded w-full py-2 px-3 mb-2'
+                className='border rounded w-full py-2 px-3 mb-2 border-gray-400'
                 placeholder='Company Location'
                 required
               />
@@ -105,7 +105,7 @@ const AddJob = () => {
                 type='text'
                 id='company'
                 name='company'
-                className='border rounded w-full py-2 px-3'
+                className='border rounded w-full py-2 px-3 border-gray-400'
                 placeholder='Company Name'
               />
             </div>
@@ -120,7 +120,7 @@ const AddJob = () => {
               <textarea
                 id='company_description'
                 name='company_description'
-                className='border rounded w-full py-2 px-3'
+                className='border rounded w-full py-2 px-3 border-gray-400'
                 rows='4'
                 placeholder='What does your company do?'
               ></textarea>
@@ -137,7 +137,7 @@ const AddJob = () => {
                 type='email'
                 id='contact_email'
                 name='contact_email'
-                className='border rounded w-full py-2 px-3'
+                className='border rounded w-full py-2 px-3 border-gray-400'
                 placeholder='Email address for applicants'
                 required
               />
@@ -153,7 +153,7 @@ const AddJob = () => {
                 type='tel'
                 id='contact_phone'
                 name='contact_phone'
-                className='border rounded w-full py-2 px-3'
+                className='border rounded w-full py-2 px-3 border-gray-400'
                 placeholder='Optional phone for applicants'
               />
             </div>
