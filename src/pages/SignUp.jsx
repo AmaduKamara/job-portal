@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const SignUp = () => {
   return (
     <main className='flex justify-center items-center'>
-      <form className='max-w-600 w-[500px] bg-white shadow-xl rounded-lg p-6 my-24'>
+      <form className='border-t-4 border-teal-600 max-w-600 w-[500px] bg-white shadow-xl rounded-lg p-6 my-24'>
         <h1 className='font-bold text-3xl text-center'>Sign Up</h1>
         <h2 className='font-semibold text-center mt-5'>
           Get Started by creating an account
