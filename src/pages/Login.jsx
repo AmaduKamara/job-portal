@@ -1,9 +1,45 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
-    <div>Login</div>
-  )
-}
+    <main className='flex justify-center items-center'>
+      <form className='max-w-600 w-[500px] bg-white shadow-xl rounded-lg p-6 my-24'>
+        <h1 className='font-bold text-3xl text-center'>Login</h1>
+        <h2 className='font-semibold text-center mt-5'>Welcome Back</h2>
 
-export default Login
+        <div className='mt-6'>
+          <input
+            type='text'
+            placeholder='Username or Email'
+            className='border py-4 px-3 rounded-md w-full border-gray-300 focus:border-teal-600'
+          />
+        </div>
+        <div className='mt-4'>
+          <input
+            type='password'
+            placeholder='Password'
+            className='border py-4 px-3 rounded-md w-full border-gray-300 focus:border-teal-600'
+          />
+        </div>
+        <div className='mt-4'>
+          <input
+            type='submit'
+            value='Login'
+            className='bg-teal-600 text-white py-4 px-3 rounded-md w-full border-gray-300 hover:bg-teal-500 focus:bg-teal-700 cursor-pointer'
+          />
+        </div>
+        <div className='mt-4'>
+          <p>
+            Dont have an account yet?{" "}
+            <Link className='text-teal-500' to='/signup'>
+              Sign Up
+            </Link>{" "}
+          </p>
+        </div>
+      </form>
+    </main>
+  );
+};
+
+export default Login;
