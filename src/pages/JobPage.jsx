@@ -1,33 +1,32 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { useParams, useLoaderData } from "react-router-dom";
 import LoadingSpinner from "../components/LoadingSpinner";
 
 const JobPage = () => {
   const { id } = useParams();
-  const [job, setJob] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const job = useLoaderData();
+  // const [job, setJob] = useState(null);
+  // const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const getJob = async () => {
-      try {
-        const res = await fetch(`http://localhost:8000/jobs/${id}`);
-        const data = await res.json();
-        // console.log(data);
-        setJob(data);
-      } catch (error) {
-        console.log("Error fetching job details: ", error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
+  // useEffect(() => {
+  //   const getJob = async () => {
+  //     try {
+  //       const res = await fetch(`http://localhost:8000/jobs/${id}`);
+  //       const data = await res.json();
+  //       // console.log(data);
+  //       setJob(data);
+  //     } catch (error) {
+  //       console.log("Error fetching job details: ", error.message);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
 
-    getJob();
-  }, [id]);
+  //   getJob();
+  // }, [id]);
 
-  return loading ? (
-    <LoadingSpinner />
-  ) : (
+  return (
     <>
       {/* <!-- Go Back --> */}
       <section>
@@ -113,4 +112,11 @@ const JobPage = () => {
   );
 };
 
-export default JobPage;
+const jobLoader = async ({ params }) => {
+  const res = await fetch(`http://localhost:8000/jobs/${params.id}`);
+  const data = await res.json();
+  return data;
+};
+
+// eslint-disable-next-line react-refresh/only-export-components
+export { JobPage as default, jobLoader };
