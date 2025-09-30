@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 import { useParams, useLoaderData } from "react-router-dom";
 import LoadingSpinner from "../components/LoadingSpinner";
+import { FaArrowLeft } from "react-icons/fa";
 
 const JobPage = () => {
   const { id } = useParams();
@@ -35,7 +36,7 @@ const JobPage = () => {
             to='/jobs'
             className='text-teal-500 hover:text-teal-600 flex items-center'
           >
-            <i className='fas fa-arrow-left mr-2'></i> Back to Job Listings
+            <FaArrowLeft className='mr-2' /> Back to Job Listings
           </Link>
         </div>
       </section>

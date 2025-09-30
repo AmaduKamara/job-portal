@@ -55,7 +55,10 @@ const AddJob = () => {
             </div>
 
             <div className='mb-4'>
-              <label for='type' className='block text-gray-700 font-bold mb-2'>
+              <label
+                for='salary'
+                className='block text-gray-700 font-bold mb-2'
+              >
                 Salary
               </label>
               <select
