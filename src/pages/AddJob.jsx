@@ -1,11 +1,25 @@
-import React from "react";
+import { useState } from "react";
 
 const AddJob = () => {
+  const [title, setTitle] = useState("");
+  const [type, setType] = useState("Full-Time");
+  const [location, setLocation] = useState("");
+  const [description, setDescription] = useState("");
+  const [salary, setSalary] = useState("Under $50K");
+  const [companyName, setCompanyName] = useState("");
+  const [companyDescription, setCompanyDescription] = useState("");
+  const [contactEmail, setContactEmail] = useState("");
+  const [contactPhone, setContactPhone] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <section className='bg-indigo-50'>
       <div className='container m-auto max-w-2xl py-24'>
         <div className='bg-white shadow-lg px-6 py-8 mb-4 rounded-md m-4 md:m-0'>
-          <form>
+          <form onSubmit={handleSubmit}>
             <h2 className='text-3xl text-center font-semibold mb-6'>Add Job</h2>
 
             <div className='mb-4'>
@@ -16,6 +30,8 @@ const AddJob = () => {
                 Job Type
               </label>
               <select
+                value={type}
+                onChange={(e) => setType(e.target.value)}
                 id='type'
                 name='type'
                 className='border rounded w-full py-2 px-3 border-gray-400'
@@ -29,10 +45,15 @@ const AddJob = () => {
             </div>
 
             <div className='mb-4'>
-              <label htmlFor="title" className='block text-gray-700 font-bold mb-2'>
+              <label
+                htmlFor='title'
+                className='block text-gray-700 font-bold mb-2'
+              >
                 Job Listing Name
               </label>
               <input
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
                 type='text'
                 id='title'
                 name='title'
@@ -49,6 +70,8 @@ const AddJob = () => {
                 Description
               </label>
               <textarea
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
                 id='description'
                 name='description'
                 className='border rounded w-full py-2 px-3 border-gray-400'
@@ -65,6 +88,8 @@ const AddJob = () => {
                 Salary
               </label>
               <select
+                value={salary}
+                onChange={(e) => setSalary(e.target.value)}
                 id='salary'
                 name='salary'
                 className='border rounded w-full py-2 px-3 border-gray-400'
@@ -85,10 +110,15 @@ const AddJob = () => {
             </div>
 
             <div className='mb-4'>
-              <label htmlFor="location" className='block text-gray-700 font-bold mb-2'>
+              <label
+                htmlFor='location'
+                className='block text-gray-700 font-bold mb-2'
+              >
                 Location
               </label>
               <input
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
                 type='text'
                 id='location'
                 name='location'
@@ -108,6 +138,8 @@ const AddJob = () => {
                 Company Name
               </label>
               <input
+                value={companyName}
+                onChange={(e) => setCompanyName(e.target.value)}
                 type='text'
                 id='company'
                 name='company'
@@ -124,6 +156,8 @@ const AddJob = () => {
                 Company Description
               </label>
               <textarea
+                value={companyDescription}
+                onChange={(e) => setCompanyDescription(e.target.value)}
                 id='company_description'
                 name='company_description'
                 className='border rounded w-full py-2 px-3 border-gray-400'
@@ -140,6 +174,8 @@ const AddJob = () => {
                 Contact Email
               </label>
               <input
+                value={contactEmail}
+                onChange={(e) => setContactEmail(e.target.value)}
                 type='email'
                 id='contact_email'
                 name='contact_email'
@@ -156,6 +192,8 @@ const AddJob = () => {
                 Contact Phone
               </label>
               <input
+                value={contactPhone}
+                onChange={(e) => setContactPhone(e.target.value)}
                 type='tel'
                 id='contact_phone'
                 name='contact_phone'
