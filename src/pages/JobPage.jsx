@@ -1,11 +1,11 @@
 // import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useParams, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { FaArrowLeft, FaMapMarker } from "react-icons/fa";
 
 const JobPage = () => {
-  const { id } = useParams();
+  // const { id } = useParams();
   const job = useLoaderData();
   // const [job, setJob] = useState(null);
   // const [loading, setLoading] = useState(true);
